@@ -278,6 +278,75 @@ function debounce(func, delay) {
 window.addEventListener('resize', debounce(() => {
     // Handle any dynamic responsive adjustments here if needed
 }, 250));
+// ==================== MAP INITIALIZATION ====================
+/**
+ * Initialize Leaflet Map
+ * - Sets up the map with the Vienna café location
+ * - Adds a custom marker
+ * - Displays café information in popup
+ */
+function initializeMap() {
+    // Café coordinates (Koramangala, Bengaluru)
+    const cafeLocation = [12.9410472, 77.6241113];
+    const cafeAddress = '435, 18th Main Rd, Koramangala, Bengaluru, Karnataka 560095';
 
+    // Create map instance
+    const map = L.map('map-container').setView(cafeLocation, 15);
+
+    // Add tile layer (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19,
+        tileSize: 256,
+    }).addTo(map);
+
+    // Create custom marker
+    const markerIcon = L.divIcon({
+        className: 'custom-marker',
+        html: `
+            <div style="
+                width: 40px;
+                height: 40px;
+                background-color: #d4af86;
+                border: 3px solid #8b7355;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            ">
+                ☕
+            </div>
+        `,
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -20]
+    });
+
+    // Add marker to map
+    const marker = L.marker(cafeLocation, { icon: markerIcon })
+        .addTo(map)
+        .bindPopup(`
+            <div style="font-family: 'Poppins', sans-serif;">
+                <h4 style="margin: 0 0 8px 0; color: #5c4a42; font-size: 16px;">Vienna Kitchen & Bakehouse</h4>
+                <p style="margin: 0 0 8px 0; color: #8b7355; font-size: 13px;">
+                    ${cafeAddress}
+                </p>
+                <p style="margin: 0; color: #8b7355; font-size: 13px;">
+                    <strong>Hours:</strong> 9:00 AM - 11:30 PM
+                </p>
+            </div>
+        `, {
+            maxWidth: 250,
+            className: 'cafe-popup'
+        });
+
+    // Open popup by default
+    marker.openPopup();
+}
+
+// Initialize map when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeMap);
 // ==================== CONSOLE MESSAGE ====================
 console.log('🍰 Vienna Kitchen & Bakehouse - Premium Café Website Loaded Successfully ✨');
