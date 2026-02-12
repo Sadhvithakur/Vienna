@@ -16,10 +16,56 @@
 
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
+const logo = document.querySelector('.logo');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 const ctaButton = document.querySelector('.cta-button');
 const menuCards = document.querySelectorAll('.menu-card');
 const galleryItems = document.querySelectorAll('.gallery-item');
 const body = document.body;
+
+// ==================== HAMBURGER MENU TOGGLE ====================
+/**
+ * Mobile Menu Toggle
+ * - Toggles hamburger menu open/close
+ * - Smooth slide-down animation
+ * - Closes when a link is clicked
+ */
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
+// ==================== LOGO CLICK TO SCROLL TOP ====================
+/**
+ * Logo Click Behavior
+ * - Smooth scroll to top when logo is clicked
+ * - Works as a home button
+ */
+if (logo) {
+    logo.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        if (hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
 
 // ==================== NAVBAR SCROLL BEHAVIOR ====================
 /**
