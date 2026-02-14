@@ -1,6 +1,6 @@
 /**
  * ==================== VANILLA JAVASCRIPT ====================
- * Vienna Kitchen & Bakehouse - Interactive Features
+ * Vienna Bakehouse & Kitchen - Interactive Features
  * 
  * This script handles:
  * - Navbar scroll behavior and style transitions
@@ -375,7 +375,7 @@ function initializeMap() {
         .addTo(map)
         .bindPopup(`
             <div style="font-family: 'Poppins', sans-serif;">
-                <h4 style="margin: 0 0 8px 0; color: #5c4a42; font-size: 16px;">Vienna Kitchen & Bakehouse</h4>
+                <h4 style="margin: 0 0 8px 0; color: #5c4a42; font-size: 16px;">Vienna Bakehouse & Kitchen</h4>
                 <p style="margin: 0 0 8px 0; color: #8b7355; font-size: 13px;">
                     ${cafeAddress}
                 </p>
@@ -395,4 +395,4 @@ function initializeMap() {
 // Initialize map when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeMap);
 // ==================== CONSOLE MESSAGE ====================
-console.log('🍰 Vienna Kitchen & Bakehouse - Premium Café Website Loaded Successfully ✨');
+console.log('🍰 Vienna Bakehouse & Kitchen - Premium Café Website Loaded Successfully ✨');
