@@ -394,5 +394,6 @@ function initializeMap() {
 
 // Initialize map when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeMap);
+
 // ==================== CONSOLE MESSAGE ====================
 console.log('🍰 Vienna Bakehouse & Kitchen - Premium Café Website Loaded Successfully ✨');
