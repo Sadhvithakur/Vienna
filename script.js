@@ -24,48 +24,39 @@ const menuCards = document.querySelectorAll('.menu-card');
 const galleryItems = document.querySelectorAll('.gallery-item');
 const body = document.body;
 
-// ==================== HAMBURGER MENU TOGGLE ====================
-/**
- * Mobile Menu Toggle
- * - Toggles hamburger menu open/close
- * - Smooth slide-down animation
- * - Closes when a link is clicked
- */
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-}
 
 // ==================== LOGO CLICK TO SCROLL TOP ====================
 /**
  * Logo Click Behavior
- * - Smooth scroll to top when logo is clicked
+ * - Smooth scroll to home section when logo is clicked
  * - Works as a home button
  */
-if (logo) {
-    logo.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.logo');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navbar = document.querySelector('.navbar');
+    
+    if (logo) {
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                const targetPosition = homeSection.offsetTop - navbarHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+            // Close mobile menu if open
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
-        // Close mobile menu if open
-        if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
-}
+    }
+});
 
 // ==================== NAVBAR SCROLL BEHAVIOR ====================
 /**
@@ -73,14 +64,19 @@ if (logo) {
  * - Applies 'scrolled' class when user scrolls down
  * - Removes it when at the top (for a transparent effect)
  */
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (navbar) {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+    });
 });
 
 // ==================== SMOOTH SCROLL NAVIGATION ====================
@@ -90,25 +86,30 @@ window.addEventListener('scroll', () => {
  * - Prevents default anchor behavior
  * - Calculates proper offset accounting for fixed navbar height
  */
-navLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
 
-        // Get the target section ID from the href
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
+            // Get the target section ID from the href
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
 
-        if (targetSection) {
-            // Calculate offset (accounting for navbar height of ~80px)
-            const navbarHeight = navbar.offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight;
+            if (targetSection) {
+                // Calculate offset (accounting for navbar height of ~80px)
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
 
-            // Smooth scroll to the target
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
+                // Smooth scroll to the target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
@@ -118,16 +119,20 @@ navLinks.forEach(link => {
  * - Smooth scroll to menu section on click
  * - Visual feedback via button hover/active states (in CSS)
  */
-ctaButton.addEventListener('click', () => {
-    const menuSection = document.getElementById('menu');
-    const navbarHeight = navbar.offsetHeight;
-    const targetPosition = menuSection.offsetTop - navbarHeight;
+if (ctaButton) {
+    ctaButton.addEventListener('click', () => {
+        const menuSection = document.getElementById('menu');
+        if (menuSection) {
+            const navbarHeight = navbar.offsetHeight;
+            const targetPosition = menuSection.offsetTop - navbarHeight;
 
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
-});
+}
 
 // ==================== SCROLL-TRIGGERED FADE-IN ANIMATIONS ====================
 /**
@@ -225,50 +230,66 @@ galleryItems.forEach(item => {
  * CTA Button Enhanced Interaction
  * - Visual feedback with scale and ripple effect
  */
-ctaButton.addEventListener('mousedown', (event) => {
-    // Create ripple effect
-    const ripple = document.createElement('span');
-    const rect = ctaButton.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = event.clientX - rect.left - size / 2;
-    const y = event.clientY - rect.top - size / 2;
+if (ctaButton) {
+    ctaButton.addEventListener('mousedown', (event) => {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        const rect = ctaButton.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = event.clientX - rect.left - size / 2;
+        const y = event.clientY - rect.top - size / 2;
 
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.classList.add('ripple');
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
 
-    // Note: Ripple CSS styling can be added for more advanced effects
-});
+        // Note: Ripple CSS styling can be added for more advanced effects
+    });
+}
 
 // ==================== ACTIVE NAV LINK INDICATOR ====================
 /**
  * Highlights Current Section in Navigation
  * - Updates active nav link as user scrolls through sections
  * - Provides visual indication of current section
+ * - Uses Intersection Observer for better performance
  */
-window.addEventListener('scroll', () => {
-    let current = '';
+const sectionObserverOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -50% 0px'
+};
 
-    // Check which section is currently in view
-    const sections = document.querySelectorAll('section');
+const sectionObserverCallback = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+            // Remove active class from all nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
 
-        // If section is in viewport, mark as current
-        if (pageYOffset >= sectionTop - navbar.offsetHeight - 100) {
-            current = section.getAttribute('id');
+            // Add active class to matching nav link
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                const linkTarget = href.substring(1);
+
+                if (linkTarget === sectionId) {
+                    link.classList.add('active');
+                }
+            });
         }
     });
+};
 
-    // Update active nav link styling
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
+const sectionObserver = new IntersectionObserver(sectionObserverCallback, sectionObserverOptions);
+
+// Observe all sections
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => {
+        sectionObserver.observe(section);
     });
 });
 
