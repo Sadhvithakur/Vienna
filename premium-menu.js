@@ -27,7 +27,7 @@ const menuData = {
             name: "Golden French Toast",
             description: " House baked Brioche bread stuffed with Cream Cheese and topped with fruits and cream.",
             price: "320",
-            image: "/media/Golden.png",
+            image: "/media/golden.png",
             popular: true
         },
         {
@@ -94,14 +94,14 @@ const menuData = {
     name: "Basque Cheesecake",
     description: "Cheesecake with a beautifully caramelized top and a soft, creamy center rich, rustic, and irresistibly smooth in every bite.",
             price: "350",
-            image: "/media/Basque.png",
+            image: "/media/basque.png",
             popular: true
         },
         {
             name: "Tiramisu",
             description: "Layers of espresso-soaked ladyfingers and velvety mascarpone cream, finished with a dusting of rich cocoa for the perfect balance of bold and sweet.",
             price: "340",
-            image: "/media/3.JPEG",
+            image: "/media/3.jpeg",
             popular: true
         },
         {
