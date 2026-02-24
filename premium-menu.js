@@ -6,7 +6,7 @@ const menuData = {
             name: "Sunrise Power Platter ",
             description: "A Hearty Mix Of Veggies, Smoked Paprika Chicken, Two Eggs, Sourdough, Mushrooms, Cherry Tomatoes, And Baked Beans.",
             price: "450",
-            image: "/media/sunrise.png",
+            image: "/media/22.png",
             popular: true
         },
         {
@@ -166,7 +166,7 @@ const menuData = {
             name: "Pistachio Affogato",
             description: "Creamy pistachio ice cream finished with a hot shot of espresso nutty, bold, and irresistibly indulgent.",
             price: "380",
-            image: "/media/pistachio.png",
+            image: "/media/23.png",
             popular: true
         },
         {
