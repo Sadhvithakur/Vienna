@@ -27,7 +27,7 @@ const menuData = {
             name: "Golden French Toast",
             description: " House baked Brioche bread stuffed with Cream Cheese and topped with fruits and cream.",
             price: "320",
-            image: "/media/golden.png",
+            image: "/media/31.png",
             popular: true
         },
         {
