@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Events - Host Your Event at Vienna Bakehouse & Kitchen</title>
+    <meta name="description"
+        content="Host corporate events, birthday parties, and celebrations at Vienna Bakehouse & Kitchen. Premium cafe venue in Koramangala with gourmet food and specialty coffee.">
+    <meta name="keywords" content="event venue, party venue, corporate events, birthday party venue, cafe koramangala">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://viennabakehouse.com/events">
+    <meta name="theme-color" content="#5c4a42">
+    <link rel="icon" type="image/png" href="/media/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Header injected by shared-layout.js -->
+
+    <!-- ==================== EVENT BOOKING SECTION ==================== -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="events-header">
+                <h1 class="section-title">Host Your Event With Us</h1>
+                <p class="section-subtitle">Celebrate life's special moments at Vienna Bakehouse & Kitchen</p>
+            </div>
+
+            <div class="events-wrapper">
+                <!-- Left Column: Information -->
+                <div class="events-info">
+                    <div class="info-content">
+                        <h2 class="info-title">Create Memorable Celebrations</h2>
+                        <p>
+                            At Vienna Bakehouse & Kitchen, we believe every event deserves a special touch. Our cozy
+                            European-style ambiance provides the perfect backdrop for your celebrations—whether it's a
+                            corporate gathering, an intimate birthday party, or a private celebration with loved ones.
+                        </p>
+
+                        <div class="event-types">
+                            <h3 class="types-title">We Host:</h3>
+                            <div class="types-grid">
+                                <div class="type-item">
+                                    <span class="type-check">✓</span>
+                                    <div class="type-content">
+                                        <span class="type-name">Corporate Events</span>
+                                        <span class="type-dash">–</span>
+                                        <span class="type-desc">Team meetings, launches, networking</span>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <span class="type-check">✓</span>
+                                    <div class="type-content">
+                                        <span class="type-name">Birthday Parties</span>
+                                        <span class="type-dash">–</span>
+                                        <span class="type-desc">Personal celebrations with custom cakes</span>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <span class="type-check">✓</span>
+                                    <div class="type-content">
+                                        <span class="type-name">Private Gatherings</span>
+                                        <span class="type-dash">–</span>
+                                        <span class="type-desc">Intimate dinners and get-togethers</span>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <span class="type-check">✓</span>
+                                    <div class="type-content">
+                                        <span class="type-name">Special Occasions</span>
+                                        <span class="type-dash">–</span>
+                                        <span class="type-desc">Anniversaries, engagements, celebrations</span>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <span class="type-check">✓</span>
+                                    <div class="type-content">
+                                        <span class="type-name">Custom Events</span>
+                                        <span class="type-dash">–</span>
+                                        <span class="type-desc">Your unique vision brought to life</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>
+                            Our freshly baked pastries, artisanal desserts, and premium specialty coffee create an
+                            unforgettable experience for your guests. Every detail is curated to perfection.
+                        </p>
+
+                        <div class="notice-box">
+                            <p class="notice-text">
+                                <strong>📅 Advance Notice Required</strong><br>
+                                Please inform us at least <strong>7 days in advance</strong> for all event bookings.
+                                This ensures we can provide the best service and prepare special arrangements for your
+                                celebration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Booking Form -->
+                <div class="events-form-container">
+                    <form class="booking-form" id="eventBookingForm">
+                        <h2 class="form-title">Request Your Booking</h2>
+
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your name"
+                                required>
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com"
+                                required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX"
+                                required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventType" class="form-label">Event Type</label>
+                            <select id="eventType" name="eventType" class="form-input" required>
+                                <option value="">Select an event type</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="private">Private Gathering</option>
+                                <option value="celebration">Special Celebration</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="eventTypeError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guestCount" class="form-label">Number of Guests</label>
+                            <input type="number" id="guestCount" name="guestCount" class="form-input"
+                                placeholder="e.g., 25" min="1" required>
+                            <span class="error-message" id="guestCountError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDate" class="form-label">Event Date</label>
+                            <input type="date" id="eventDate" name="eventDate" class="form-input" required>
+                            <span class="helper-text">📅 Bookings must be made at least a Week in advance</span>
+                            <span class="error-message" id="eventDateError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventTime" class="form-label">Event Time</label>
+                            <input type="time" id="eventTime" name="eventTime" class="form-input" required>
+                            <span class="error-message" id="eventTimeError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Special Requests & Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea"
+                                placeholder="Tell us about your event, dietary preferences, special requests..."
+                                rows="4"></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button">Request Booking</button>
+
+                        <div class="success-message" id="successMessage" style="display: none;">
+                            <p>✓ Thank you! Your event booking request has been received.</p>
+                            <p>We'll contact you within 24 hours to confirm details and finalize your celebration.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer injected by shared-layout.js -->
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Configuration and Integration -->
+    <script src="/config.js"></script>
+    <script src="/emailjs-integration.js"></script>
+
+    <!-- Shared Layout System -->
+    <script src="/shared-layout.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="/script.js"></script>
+</body>
+
+</html>

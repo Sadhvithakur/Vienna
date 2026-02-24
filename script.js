@@ -324,6 +324,7 @@ function debounce(func, delay) {
 window.addEventListener('resize', debounce(() => {
     // Handle any dynamic responsive adjustments here if needed
 }, 250));
+
 // ==================== MAP INITIALIZATION ====================
 /**
  * Initialize Leaflet Map
