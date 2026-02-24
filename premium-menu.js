@@ -94,14 +94,14 @@ const menuData = {
     name: "Basque Cheesecake",
     description: "Cheesecake with a beautifully caramelized top and a soft, creamy center rich, rustic, and irresistibly smooth in every bite.",
             price: "350",
-            image: "/media/basque.png",
+            image: "/media/b.png",
             popular: true
         },
         {
             name: "Tiramisu",
             description: "Layers of espresso-soaked ladyfingers and velvety mascarpone cream, finished with a dusting of rich cocoa for the perfect balance of bold and sweet.",
-            price: "340",
-            image: "/media/3.jpeg",
+            price: "340",           
+            image: "/media/t.jpeg",
             popular: true
         },
         {
@@ -129,7 +129,7 @@ const menuData = {
             name: "Pineapple Delight Cake",
             description: "Moist pineapple-infused cake layered with tangy pineapple filling and topped with a light, fluffy frosting a tropical treat that’s sweet, tangy, and utterly delicious.",
             price: "380",
-            image: "/media/pine.png",
+            image: "/media/25.png",
             popular: false
         }
     ],
