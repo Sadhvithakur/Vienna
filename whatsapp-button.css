@@ -1,0 +1,277 @@
+/* ============================================
+   Premium Minimal WhatsApp Button
+   Vienna Bakehouse & Kitchen
+   Logo-Only Default → Light Box Expand
+   ============================================ */
+
+:root {
+    --background-light: #F5F1EA;
+    --text-dark: #333333;
+    --transition-speed: 0.3s;
+    --z-index-whatsapp: 9999;
+}
+
+/* ============================================
+   DEFAULT STATE - Logo Only
+   ============================================ */
+.whatsapp-button {
+    /* Positioning */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: var(--z-index-whatsapp);
+
+    /* Display & Layout */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    /* Size - Auto for logo only */
+    width: auto;
+    height: auto;
+    padding: 0;
+
+    /* Styling */
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    color: var(--text-dark);
+
+    /* No shadow or background */
+    box-shadow: none;
+
+    /* Smooth transitions */
+    transition:
+        width var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        height var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        padding var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        background-color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* User select */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    /* No outline */
+    outline: none;
+}
+
+/* ============================================
+   LOGO STYLING
+   ============================================ */
+.whatsapp-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+    /* Subtle drop shadow on logo */
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    transition:
+        width var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        height var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        filter var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whatsapp-button.expanded .whatsapp-icon,
+.whatsapp-button:hover .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(none);
+}
+
+/* ============================================
+   TEXT STYLING
+   ============================================ */
+.whatsapp-text {
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition:
+        opacity var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+        visibility var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    letter-spacing: 0.2px;
+}
+
+.whatsapp-button.expanded .whatsapp-text {
+    opacity: 1;
+    visibility: visible;
+    color: #333333 !important;
+}
+
+/* ============================================
+   EXPANDED STATE (Click/Tap or Hover)
+   ============================================ */
+.whatsapp-button.expanded {
+    width: 180px !important;
+    height: 48px !important;
+    padding: 0 16px !important;
+    border-radius: 50px !important;
+    background-color: #F5F1EA !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* ============================================
+   DESKTOP HOVER STATE
+   ============================================ */
+@media (hover: hover) and (pointer: fine) {
+    .whatsapp-button:hover {
+        width: 180px !important;
+        height: 48px !important;
+        padding: 0 16px !important;
+        border-radius: 50px !important;
+        background-color: #F5F1EA !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+        transform: translateY(-3px) !important;
+    }
+}
+
+.whatsapp-button:hover .whatsapp-text {
+    opacity: 1;
+    visibility: visible;
+    color: #333333 !important;
+}
+
+.whatsapp-button:active {
+    transform: translateY(-1px);
+}
+}
+
+/* ============================================
+   TABLET & MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .whatsapp-button {
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-button.expanded .whatsapp-icon,
+    .whatsapp-button:hover .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-button {
+        bottom: 25px;
+        right: 20px;
+    }
+
+    .whatsapp-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .whatsapp-button.expanded .whatsapp-icon,
+    .whatsapp-button:hover .whatsapp-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .whatsapp-button.expanded {
+        width: 160px;
+        padding: 0 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        bottom: 70px;
+        right: 15px;
+    }
+
+    .whatsapp-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .whatsapp-button.expanded .whatsapp-icon,
+    .whatsapp-button:hover .whatsapp-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .whatsapp-button.expanded {
+        width: 150px;
+        height: 44px !important;
+        padding: 0 12px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.whatsapp-button:focus-visible {
+    outline: 2px solid var(--text-dark);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: more) {
+    .whatsapp-button.expanded {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--text-dark);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-button {
+        transition: none;
+    }
+
+    .whatsapp-icon {
+        transition: none;
+    }
+
+    .whatsapp-text {
+        transition: none;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .whatsapp-button {
+        display: none;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-light: #2a2a2a;
+        --text-dark: #f0f0f0;
+    }
+
+    .whatsapp-button.expanded {
+        box-shadow: 0 6px 16px rgba(255, 255, 255, 0.12);
+    }
+}

@@ -44,6 +44,12 @@ body {
     color: var(--deep-brown);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Ensure body doesn't create stacking context for fixed elements */
+    position: static;
+    transform: none;
+    /* Android text scaling fix */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 img {
@@ -81,9 +87,11 @@ h6 {
 
 /* ==================== CONTAINER ==================== */
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ==================== NAVIGATION BAR ==================== */
@@ -333,7 +341,7 @@ h6 {
         right: 0;
         width: 100%;
         height: auto;
-        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
         flex-direction: column;
         gap: 0;
         background: rgba(245, 243, 240, 0.98);
@@ -449,7 +457,7 @@ h6 {
 /* ==================== HERO SECTION ==================== */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -660,7 +668,9 @@ h6 {
 .menu-wrapper {
     display: flex;
     align-items: stretch;
-    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Menu Columns */
@@ -1141,6 +1151,9 @@ h6 {
     padding: var(--spacing-2xl) 0;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .events::before {
@@ -1158,6 +1171,7 @@ h6 {
 .events-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
+    width: 100%;
 }
 
 .events-header .section-title {
@@ -1176,17 +1190,22 @@ h6 {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
     align-items: start;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Events Info Column */
 .events-info {
     animation: fadeInUp 0.8s ease-out forwards;
+    width: 100%;
+    max-width: 100%;
 }
 
 .info-content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    width: 100%;
 }
 
 .info-title {
@@ -1360,6 +1379,8 @@ h6 {
 
 .form-input,
 .form-textarea {
+    width: 100%;
+    max-width: 100%;
     padding: var(--spacing-md);
     border: 2px solid var(--light-grey);
     border-radius: 10px;
@@ -1369,6 +1390,7 @@ h6 {
     background: var(--off-white);
     transition: var(--transition-smooth);
     outline: none;
+    box-sizing: border-box;
 }
 
 .form-input::placeholder,
@@ -1398,11 +1420,14 @@ h6 {
 
 /* Select Styling */
 select.form-input {
+    width: 100%;
+    max-width: 100%;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b7355' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
+    box-sizing: border-box;
 }
 
 /* Textarea */
@@ -1410,6 +1435,15 @@ select.form-input {
     resize: vertical;
     min-height: 120px;
     line-height: 1.5;
+}
+
+/* Generic input and select fallback */
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Helper Text */
@@ -1501,9 +1535,21 @@ select.form-input {
     background: var(--deep-brown);
     color: var(--off-white);
     padding: var(--spacing-lg) 0;
+    padding-bottom: calc(var(--spacing-lg) + 60px);
     text-align: center;
     font-size: 0.95rem;
     font-weight: 300;
+    /* Ensure footer doesn't interfere with fixed button positioning */
+    position: static;
+    z-index: auto;
+}
+
+@media (max-width: 480px) {
+    .footer {
+        /* Extra padding on mobile to accommodate floating button */
+        padding: var(--spacing-lg) 0;
+        padding-bottom: calc(var(--spacing-lg) + 80px);
+    }
 }
 
 /* ==================== ANIMATIONS ==================== */
@@ -1572,7 +1618,7 @@ select.form-input {
 
     .hero {
         margin-top: 70px;
-        height: 80vh;
+        height: 80dvh;
     }
 
     .hero-title {
@@ -1705,7 +1751,7 @@ select.form-input {
 
     .hero {
         margin-top: 60px;
-        height: 80vh;
+        height: 80dvh;
     }
 
     .hero-title {
@@ -3165,4 +3211,87 @@ select.form-input {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* ============================================
+   WhatsApp Widget
+   Vienna Bakehouse & Kitchen
+   ============================================ */
+
+.whatsapp-widget {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Icon */
+.whatsapp-widget img {
+    width: 30px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Hidden Text */
+.wa-text {
+    background: #ffffff;
+    color: #333;
+
+    padding: 8px 14px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    margin-right: 8px;
+
+    white-space: nowrap;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    transform: translateX(20px);
+
+    transition: all 0.25s ease;
+
+    pointer-events: none;
+}
+
+/* Expand on Hover */
+.whatsapp-widget:hover .wa-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .whatsapp-widget {
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .whatsapp-widget img {
+        width: 26px;
+        height: auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .whatsapp-widget {
+        display: none;
+    }
+}
+
+/* ==================== LARGE SCREEN CONTAINER ==================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
 }
