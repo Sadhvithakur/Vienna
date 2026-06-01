@@ -410,6 +410,141 @@ function injectFormStyles() {
             background: rgba(201, 168, 124, 0.3);
         }
 
+        /* Inspiration Gallery Section */
+        .inspiration-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .inspiration-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #5c4a42;
+            margin-bottom: 0.5rem;
+        }
+
+        .inspiration-section > p {
+            font-size: 13px;
+            color: #8b7355;
+            margin-bottom: 1.5rem;
+        }
+
+        .inspiration-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .inspiration-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .inspiration-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .inspiration-img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+        }
+
+        .inspiration-item:hover .inspiration-img {
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+            transform: scale(1.05);
+        }
+
+        .inspiration-label {
+            font-size: 11px;
+            color: #8b6343;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* Your Inspiration Section */
+        .your-inspiration-section {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+        }
+
+        .your-inspiration-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .your-inspiration-header p {
+            font-size: 13px;
+            color: #ffffff;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Upload Box */
+        .upload-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(245, 237, 227, 0.5);
+            border: 2px dashed rgba(201, 168, 124, 0.4);
+            border-radius: 14px;
+            margin-bottom: 1.8rem;
+            transition: all 0.2s;
+        }
+
+        .upload-box:hover {
+            border-color: rgba(201, 168, 124, 0.7);
+            background: rgba(245, 237, 227, 0.8);
+        }
+
+        .upload-hint {
+            display: block;
+            font-size: 11px;
+            color: #a08070;
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        /* Photos Preview Section */
+        .photos-preview-section {
+            margin-top: 1.5rem;
+        }
+
+        .preview-header {
+            margin-bottom: 1rem;
+        }
+
+        .preview-header h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: #5c4a42;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .photo-count {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #c9a87c;
+            margin-top: 1rem;
+            padding: 0.7rem;
+            background: rgba(201, 168, 124, 0.1);
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
         .photo-mosaic {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -435,6 +570,20 @@ function injectFormStyles() {
 
         .p-tile:hover img {
             transform: scale(1.06);
+        }
+
+        .p-tile-label {
+            text-align: center;
+            font-size: 13px;
+            color: #c9a87c;
+            font-weight: 600;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .pickup-note {
@@ -763,14 +912,28 @@ function getFormHTML() {
             </div>
             <div class="gal-hero">
                 <div class="gal-inner">
-                    <h3>Our Cake Gallery</h3>
-                    <p>Get inspired by our creations before designing your custom cake.</p>
-                    <label class="gal-btn" for="admin-upload">
-                        <i class="ti ti-upload"></i> Add cake photos
-                    </label>
-                    <input type="file" id="admin-upload" accept="image/*" multiple style="display:none" onchange="addPhotos(this)">
-                    <div class="photo-mosaic" id="mosaic">
-                        <span class="empty-gal" id="empty-gal">Your cake photos will appear here</span>
+                    <!-- Our Signature Cakes -->
+                    <div class="your-inspiration-section">
+                        <div class="your-inspiration-header">
+                            <h3>🎂 Our Signature Cakes</h3>
+                            <p>Browse our beautiful cake designs for inspiration. You'll describe your preferences in the next steps.</p>
+                        </div>
+                        
+                        <!-- Signature Cakes Gallery -->
+                        <div class="photo-mosaic" id="signature-cakes">
+                            <div class="p-tile">
+                                <img src="media/c1.png" alt="Signature Cake 1">
+                            </div>
+                            <div class="p-tile">
+                                <img src="media/c2.png" alt="Signature Cake 2">
+                            </div>
+                            <div class="p-tile">
+                                <img src="media/c3.png" alt="Signature Cake 3">
+                            </div>
+                            <div class="p-tile">
+                                <img src="media/c4.png" alt="Signature Cake 4">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -955,7 +1118,6 @@ function initializeForm() {
     window.selFlavor = '';
     window.selFrost = 'No preference';
     window.selDiet = 'None';
-    window.photos = [];
 
     // Load EmailJS library if not already loaded
     if (!window.emailjs) {
@@ -1082,33 +1244,6 @@ function buildSummary() {
     document.getElementById('summary-card').innerHTML = html;
 }
 
-function addPhotos(input) {
-    Array.from(input.files).forEach(function (f) {
-        if (!f.type.startsWith('image/')) return;
-        const r = new FileReader();
-        r.onload = function (e) { window.photos.push(e.target.result); renderMosaic(); };
-        r.readAsDataURL(f);
-    });
-    input.value = '';
-}
-
-function renderMosaic() {
-    const m = document.getElementById('mosaic');
-    const eg = document.getElementById('empty-gal');
-    if (!window.photos.length) { m.innerHTML = ''; if (eg) { m.appendChild(eg); } return; }
-    if (eg && eg.parentNode) eg.parentNode.removeChild(eg);
-    m.innerHTML = '';
-    window.photos.forEach(function (src, i) {
-        const d = document.createElement('div');
-        d.className = 'p-tile';
-        d.innerHTML = '<img src="' + src + '" alt="Cake ' + (i + 1) + '">'
-            + '<button class="pdel" onclick="removePhoto(' + i + ')" aria-label="Remove">×</button>';
-        m.appendChild(d);
-    });
-}
-
-function removePhoto(i) { window.photos.splice(i, 1); renderMosaic(); }
-
 function submitOrder() {
     const btn = document.getElementById('final-btn');
     btn.disabled = true;
@@ -1134,8 +1269,6 @@ function submitOrder() {
         dietary: window.selDiet,
         cake_message: document.getElementById('f-caketxt').value.trim() || 'None',
         design_notes: document.getElementById('f-design').value.trim() || 'None',
-        design_images: window.photos && window.photos.length > 0 ? window.photos.length + ' image(s) uploaded' : 'No images uploaded',
-        images_count: window.photos ? window.photos.length : 0,
         reply_to: document.getElementById('f-email').value.trim()
     }).then(function () {
         document.querySelectorAll('.panel').forEach(function (p) { p.style.display = 'none'; });
