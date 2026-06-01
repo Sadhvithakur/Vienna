@@ -1018,6 +1018,13 @@ h6 {
 
     .cakes-preview {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .cakes-content {
+        order: -1;
+        z-index: 10;
+        position: relative;
     }
 
     .cakes-features {
@@ -1033,7 +1040,10 @@ h6 {
     }
 
     .cakes-image {
-        height: 250px;
+        height: 200px;
+        margin-top: var(--spacing-lg);
+        position: relative;
+        z-index: 1;
     }
 
     .cakes-image video {
@@ -1172,9 +1182,90 @@ h6 {
         width: 100%;
     }
 
+    /* Fix video overlap on mobile - ensure button is clickable */
+    .custom-cakes-section {
+        padding: var(--spacing-lg) 20px;
+    }
+
+    .cakes-preview {
+        display: block !important;
+        width: 100%;
+    }
+
+    .cakes-content {
+        width: 100%;
+        display: block;
+        margin-bottom: var(--spacing-lg);
+        position: relative;
+        z-index: 20;
+    }
+
+    .cakes-heading {
+        font-size: 1.3rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .cakes-description {
+        margin-bottom: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .cakes-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .feature-item {
+        padding: var(--spacing-sm);
+    }
+
+    .cakes-cta {
+        display: inline-block;
+        position: relative;
+        z-index: 25;
+        margin-bottom: var(--spacing-xl);
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .cakes-image {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+        clear: both;
+    }
+
+    .cakes-image video {
+        width: 75%;
+        max-width: 200px;
+        height: auto;
+        display: block;
+    }
+
+    .feature-item {
+        padding: var(--spacing-xs);
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .feature-icon {
+        font-size: 1.2rem;
+    }
+
+    .feature-text {
+        font-size: 0.8rem;
+    }
+
     /* Optimize gallery items on small screens */
     .gallery-item {
-        max-height: 250px;
+        max-height: 200px;
+        height: 200px;
     }
 
     .gallery-item img,
@@ -2213,7 +2304,8 @@ textarea {
 
     .hero {
         margin-top: 70px;
-        height: 80dvh;
+        height: 70vh;
+        max-height: 500px;
     }
 
     .hero-title {
@@ -2222,6 +2314,25 @@ textarea {
 
     .hero-subtitle {
         font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+
+    /* Cakes Section */
+    .cakes-preview {
+        gap: var(--spacing-lg);
+    }
+
+    .cakes-content {
+        position: relative;
+        z-index: 10;
+    }
+
+    .cakes-cta {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .cakes-image {
+        position: relative;
+        z-index: 1;
     }
 
     .section-title {
@@ -2372,24 +2483,58 @@ textarea {
 
     .hero {
         margin-top: 60px;
-        height: 80dvh;
+        height: 65vh;
+        max-height: 450px;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
     }
 
     .hero-content {
         padding: var(--spacing-lg) var(--spacing-md);
     }
 
+    .google-review-badge {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
     .cta-button {
         padding: var(--spacing-md) var(--spacing-lg);
         font-size: 0.95rem;
+        min-height: 48px;
+    }
+
+    /* Cakes Section on Tablet */
+    .cakes-preview {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .cakes-content {
+        position: relative;
+        z-index: 10;
+    }
+
+    .cakes-image {
+        position: relative;
+        z-index: 1;
+        height: auto;
+        margin-top: var(--spacing-lg);
+    }
+
+    .cakes-image video {
+        width: 85%;
+        max-width: 300px;
+    }
+
+    .feature-item {
+        padding: var(--spacing-md);
     }
 
     .menu-wrapper {
@@ -2778,27 +2923,35 @@ textarea {
     /* ========== HERO ========== */
     .hero {
         margin-top: 60px;
-        height: 70vh;
-        min-height: 400px;
+        height: 50vh;
+        min-height: 280px;
+        max-height: 350px;
     }
 
     .hero-title {
-        font-size: 1.5rem;
-        line-height: 1.3;
+        font-size: 1.3rem;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        margin-bottom: var(--spacing-lg);
     }
 
     .hero-content {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--spacing-md) var(--spacing-xs);
+    }
+
+    .google-review-badge {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.8rem;
+        margin-bottom: var(--spacing-md);
     }
 
     .cta-button {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 0.85rem;
-        min-height: 44px;
+        min-height: 48px;
         min-width: 120px;
     }
 

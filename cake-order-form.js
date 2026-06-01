@@ -1134,7 +1134,7 @@ function submitOrder() {
         dietary: window.selDiet,
         cake_message: document.getElementById('f-caketxt').value.trim() || 'None',
         design_notes: document.getElementById('f-design').value.trim() || 'None',
-        design_images: window.photos && window.photos.length > 0 ? JSON.stringify(window.photos) : 'No images uploaded',
+        design_images: window.photos && window.photos.length > 0 ? window.photos.length + ' image(s) uploaded' : 'No images uploaded',
         images_count: window.photos ? window.photos.length : 0,
         reply_to: document.getElementById('f-email').value.trim()
     }).then(function () {
