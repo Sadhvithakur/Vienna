@@ -22,12 +22,13 @@ function createHeader() {
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link" data-page="home">Home</a></li>
-                    <li><a href="#menu" class="nav-link" data-page="menu">Menu</a></li>
-                    <li><a href="#about" class="nav-link" data-page="about">About</a></li>
-                    <li><a href="#gallery" class="nav-link" data-page="gallery">Gallery</a></li>
-                    <li><a href="#events" class="nav-link" data-page="events">Events</a></li>
-                    <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                    <li><a href="/" class="nav-link" data-section="home">Home</a></li>
+                    <li><a href="#menu" class="nav-link" data-section="menu">Menu</a></li>
+                    <li><a href="#custom-cakes" class="nav-link custom-cakes-link" id="cakeOrdersNav" data-section="cakes" title="Order Custom Cakes">🎂 Custom Cakes</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                    <li><a href="#events" class="nav-link" data-section="events">Events</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,7 +40,7 @@ function createFooter() {
     return `
         <footer class="footer">
             <div class="container">
-                <p>&copy; 2026 Vienna Bakehouse & Kitchen - Premium Café & Bakery in Koramangala, Bengaluru (6th Block). All rights reserved. Specialty Coffee | Artisanal Pastries | Open Daily 9 AM - 11:30 PM | <a href="/contact.html" style="color: inherit; text-decoration: underline;">Find us in Koramangala</a></p>
+                <p>&copy; 2026 Vienna Bakehouse & Kitchen - Premium Café & Bakery in Koramangala, Bengaluru (6th Block). All rights reserved. Specialty Coffee | Artisanal Pastries | Open Daily 9 AM - 11:30 PM | <a href="#contact" class="footer-contact-link" style="color: inherit; text-decoration: underline;">Find us in Koramangala</a></p>
             </div>
         </footer>
     `;
@@ -276,8 +277,77 @@ function getCurrentPage() {
 
 // Initialize smart navigation
 function initializeSmartNavigation() {
-    // SPA navigation - all links use anchor navigation
-    // No need for page-based routing since everything is on one page
+    // Get all nav links
+    const navLinks = document.querySelectorAll('.nav-link, .footer-contact-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const section = this.getAttribute('data-section') || this.getAttribute('href').substring(1);
+            const customCakesLink = this.classList.contains('custom-cakes-link');
+
+            // Check if we're on the homepage
+            const isHomePage = window.location.pathname === '/' ||
+                window.location.pathname === '/index.html' ||
+                window.location.pathname.endsWith('/index.html');
+
+            // Check if the section exists on this page
+            const sectionExists = document.getElementById(section);
+
+            // Special handling for custom cakes link
+            if (customCakesLink && (!isHomePage || !sectionExists)) {
+                e.preventDefault();
+                window.location.href = '/cakes.html';
+                return;
+            }
+
+            if (!isHomePage || !sectionExists) {
+                // Not on homepage or section doesn't exist - go to homepage first
+                e.preventDefault();
+                window.location.href = '/#' + section;
+                return;
+            }
+
+            // On homepage and section exists - smooth scroll
+            if (sectionExists) {
+                e.preventDefault();
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                const targetPosition = sectionExists.offsetTop - navbarHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const hamburger = document.getElementById('hamburger');
+                const navMenu = document.getElementById('navMenu');
+                if (hamburger && navMenu && hamburger.classList.contains('active')) {
+                    hamburger.click();
+                }
+            }
+        });
+    });
+
+    // Handle hash navigation on page load
+    window.addEventListener('load', function () {
+        const hash = window.location.hash;
+        if (hash) {
+            const section = hash.substring(1);
+            const sectionElement = document.getElementById(section);
+            if (sectionElement) {
+                setTimeout(() => {
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                    const targetPosition = sectionElement.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    });
 }
 
 // Handle smooth scrolling for anchor links on current page
@@ -421,8 +491,4 @@ function initializeUrlUpdater() {
 document.addEventListener('DOMContentLoaded', () => {
     injectHeader();
     injectFooter();
-    initializeSmoothScroll();
-    initializeRouting();
-    initializeUrlUpdater();
-    initializeScrollNavigation();
 });

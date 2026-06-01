@@ -1,0 +1,84 @@
+================================================================================
+EMAILJS CAKE ORDER TEMPLATE
+For: template_mbk53zg
+================================================================================
+
+COPY AND PASTE THIS INTO YOUR EMAILJS TEMPLATE EDITOR:
+
+================================================================================
+
+🎂 VIENNA BAKEHOUSE & KITCHEN - CAKE ORDER
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 CUSTOMER DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Name: {{customer_name}}
+Phone: {{customer_phone}}
+Email: {{customer_email}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 ORDER DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Occasion: {{occasion}}
+Pickup Date: {{pickup_date}}
+Pickup Time: {{pickup_time}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🍰 CAKE SPECIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Size: {{cake_size}}
+Flavour: {{flavour}}
+Frosting: {{frosting}}
+Dietary Requirements: {{dietary}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✍️  CAKE MESSAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{{cake_message}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 DESIGN NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{{design_notes}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Thank you for choosing Vienna Bakehouse & Kitchen!
+We'll confirm your order soon.
+
+Contact us: +91 9741616814
+Email: info@viennabakehouse.com
+
+================================================================================
+
+STEPS TO ADD THIS TO EMAILJS:
+
+1. Go to https://dashboard.emailjs.com
+2. Click "Email Templates"
+3. Find or create template: template_mbk53zg
+4. Click "Edit"
+5. In the "Content" field, paste the above template text
+6. Make sure these variables are used (exactly as shown with {{}}):
+   - {{customer_name}}
+   - {{customer_phone}}
+   - {{customer_email}}
+   - {{occasion}}
+   - {{pickup_date}}
+   - {{pickup_time}}
+   - {{cake_size}}
+   - {{flavour}}
+   - {{frosting}}
+   - {{dietary}}
+   - {{cake_message}}
+   - {{design_notes}}
+7. Click "Save"
+8. Test by sending an order from vienna_cake_order.html
+
+The code in vienna_cake_order.html is already sending all these variables correctly!
+
+================================================================================

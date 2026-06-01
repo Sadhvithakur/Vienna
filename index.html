@@ -165,6 +165,53 @@
         </div>
     </section>
 
+    <!-- ==================== CUSTOM CAKES ORDER SECTION ==================== -->
+    <section id="custom-cakes" class="custom-cakes-section">
+        <div class="container">
+            <div class="cakes-section-header">
+                <h2 class="section-title">Order a Custom Cake</h2>
+                <p class="section-subtitle">Handcrafted. Personalized. Unforgettable.</p>
+            </div>
+            <div class="cakes-preview">
+                <div class="cakes-content">
+                    <h3 class="cakes-heading">Design Your Dream Cake</h3>
+                    <p class="cakes-description">
+                        Celebrate life's special moments with a custom-designed cake made just for you. From intimate
+                        gatherings to grand celebrations, our artisanal bakers bring your vision to life with premium
+                        ingredients and meticulous craftsmanship.
+                    </p>
+                    <div class="cakes-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎨</span>
+                            <span class="feature-text">Endless customization options</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🍰</span>
+                            <span class="feature-text">Premium flavors & fillings</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📅</span>
+                            <span class="feature-text">5+ days advance notice</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎁</span>
+                            <span class="feature-text">Perfect for all occasions</span>
+                        </div>
+                    </div>
+                    <a href="/cakes.html" class="cta-button cakes-cta">Start Ordering <i
+                            class="ti ti-arrow-right"></i></a>
+                </div>
+                <div class="cakes-image">
+                    <video controls autoplay loop muted playsinline preload="metadata"
+                        style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); max-width: 90%; width: 100%; height: auto; display: block;">
+                        <source src="/media/cake.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== ABOUT SECTION ==================== -->
     <section id="about" class="about">
         <div class="about-container">
@@ -193,7 +240,7 @@
                     </p>
                 </div>
                 <div class="about-image-wrapper">
-                    <video autoplay muted loop playsinline class="about-video">
+                    <video autoplay muted loop playsinline preload="metadata" class="about-video">
                         <source src="/media/D.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -210,32 +257,33 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item" data-aos="zoom-in">
-                    <img src="/media/30.jpeg" alt="Specialty coffee and book at Vienna cafe Koramangala">
+                    <img src="/media/30.jpeg" alt="Specialty coffee and book at Vienna cafe Koramangala" loading="lazy">
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item">
-                    <video autoplay muted loop playsinline
+                    <video autoplay muted loop playsinline preload="metadata"
                         style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;">
                         <source src="/media/14.mp4" type="video/mp4">
                     </video>
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item" data-aos="zoom-in">
-                    <img src="/media/5.jpeg" alt="Fresh baked pastries and desserts from Vienna bakery">
+                    <img src="/media/5.jpeg" alt="Fresh baked pastries and desserts from Vienna bakery" loading="lazy">
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item" data-aos="zoom-in">
-                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <video autoplay muted loop playsinline preload="metadata"
+                        style="width: 100%; height: 100%; object-fit: cover;">
                         <source src="/media/16.mp4" type="video/mp4">
                     </video>
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item" data-aos="zoom-in">
-                    <img src="/media/7.jpeg" alt="Rustic wooden interior design at Vienna cafe">
+                    <img src="/media/7.jpeg" alt="Rustic wooden interior design at Vienna cafe" loading="lazy">
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item" data-aos="zoom-in">
-                    <video autoplay muted loop playsinline
+                    <video autoplay muted loop playsinline preload="metadata"
                         style="width: 100%; height: 100%; object-fit: cover; object-position: center center; transform: scale(1.8);">
                         <source src="/media/20.mp4" type="video/mp4">
                     </video>
@@ -487,6 +535,7 @@
     <!-- JavaScript -->
     <script src="/script.js"></script>
     <script src="/mobile-enhancements.js"></script>
+    <script src="/media-optimization.js"></script>
 
     <!-- Floating WhatsApp Widget -->
     <a href="https://wa.me/918792668418" class="whatsapp-widget" target="_blank" rel="noopener noreferrer"
