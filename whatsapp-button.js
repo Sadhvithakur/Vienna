@@ -58,7 +58,7 @@
      */
     button.addEventListener('click', function (e) {
         const now = Date.now();
-        
+
         // Debounce rapid clicks
         if (now - lastClickTime < clickDebounce) {
             return;
@@ -101,12 +101,12 @@
     /**
      * Handle touch events for mobile reliability
      */
-    button.addEventListener('touchstart', function(e) {
+    button.addEventListener('touchstart', function (e) {
         // Mark button as touched for better mobile UX
         button.style.opacity = '0.8';
     }, false);
 
-    button.addEventListener('touchend', function(e) {
+    button.addEventListener('touchend', function (e) {
         // Reset opacity
         button.style.opacity = '1';
     }, false);
