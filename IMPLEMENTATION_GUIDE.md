@@ -24,7 +24,7 @@ vienna/
 │   ├── bg.jpeg
 │   ├── D.mp4
 │   ├── 1.JPEG through 6.PNG
-│   └── menu.pdf
+│   └── menu1.pdf
 ```
 
 ### 2. Server Configuration
