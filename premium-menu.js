@@ -5,28 +5,28 @@ const menuData = {
         {
             name: "Sunrise Power Platter ",
             description: "A Hearty Mix Of Veggies, Smoked Paprika Chicken, Two Eggs, Sourdough, Mushrooms, Cherry Tomatoes, And Baked Beans.",
-            price: "450",
+            price: "495",
             image: "/media/22.png",
             popular: true
         },
         {
             name: "Morning Harvest Platter",
             description: "A Veggie-Packed Breakfast With Sauteed Greens, Tabbouleh, Hash Browns, Scrambled Tofu, Sourdough,  Mushrooms, Cherry Tomatoes, And Baked Beans.",
-            price: "430",
+            price: "495",
             image: "/media/morning.png",
             popular: false
         },
         {
             name: "Turkish Eggs Platter ",
             description: "A Mediterranean-inspired breakfast featuring soft-boiled eggs, Greek yogurt, sautéed broccoli, cherry tomatoes, warm pita with hummus, chicken sausage, and spicy scrambled chicken.",
-            price: "485",
+            price: "525",
             image: "/media/brekfast.png",
             popular: false
         },
         {
             name: "Golden French Toast",
             description: " House baked Brioche bread stuffed with Cream Cheese and topped with fruits and cream.",
-            price: "320",
+            price: "380",
             image: "/media/31.png",
             popular: true
         },
@@ -38,9 +38,9 @@ const menuData = {
             popular: false
         },
         {
-            name: "Benedict Bliss ",
+            name: "Benedict Bliss (Mini)",
             description: "Poached eggs on toasted house made bun, silky hollandaise & fresh salad.",
-            price: "250",
+            price: "260",
             image: "/media/bliss.png",
             popular: true
         }
@@ -49,7 +49,7 @@ const menuData = {
         {
             name: "Cilantro Parsley & Jalapeño Hummus",
             description: "Creamy hummus infused with fresh cilantro, parsley, and a spicy jalapeño kick.",
-            price: "380",
+            price: "420",
             image: "/media/humus.png",
             popular: true
         },
@@ -63,21 +63,21 @@ const menuData = {
         {
             name: "Spaghetti Aglio Olio",
             description: "Simple, bold flavors of garlic-infused olive oil and fresh herbs.",
-            price: "Veg    435  Chicken   450",
+            price: '<span class="price-group"><span class="price-label">Veg</span><span class="price-value">435</span></span><span class="price-divider">/</span><span class="price-group"><span class="price-label">Chicken</span><span class="price-value">450</span></span>',
             image: "/media/pasta.png",
             popular: true
         },
         {
             name: "Malabar Ghee Roast Croissant Sandwich",
             description: "South Indian soul in a French bite. Buttery croissant stuffed with rich Malabar ghee roast paneer, layered with caramelized onions and spices. ",
-            price: "430",
+            price: '<span class="price-group"><span class="price-label">Veg</span><span class="price-value">440</span></span><span class="price-divider">/</span><span class="price-group"><span class="price-label">Chicken</span><span class="price-value">460</span></span>',
             image: "/media/malabar.png",
             popular: true
         },
         {
             name: "Casa Mexicana Bowl",
             description: "FresA Tex-Mex Bowl With Mexican Rice, Spicy Fajita Veggies, Sour Cream, Nachos, Salsa, And A Fresh House Salad. Big On Flavour And Texture.",
-            price: "395",
+            price: '<span class="price-group"><span class="price-label">Veg</span><span class="price-value">395</span></span><span class="price-divider">/</span><span class="price-group"><span class="price-label">Non-Veg</span><span class="price-value">450</span></span>',
             image: "/media/mex.png",
             popular: false
         },
@@ -90,9 +90,9 @@ const menuData = {
         }
     ],
     desserts: [
-{
-    name: "Basque Cheesecake",
-    description: "Cheesecake with a beautifully caramelized top and a soft, creamy center rich, rustic, and irresistibly smooth in every bite.",
+        {
+            name: "Basque Cheesecake",
+            description: "Cheesecake with a beautifully caramelized top and a soft, creamy center rich, rustic, and irresistibly smooth in every bite.",
             price: "350",
             image: "/media/b.png",
             popular: true
@@ -100,7 +100,7 @@ const menuData = {
         {
             name: "Tiramisu",
             description: "Layers of espresso-soaked ladyfingers and velvety mascarpone cream, finished with a dusting of rich cocoa for the perfect balance of bold and sweet.",
-            price: "340",           
+            price: "340",
             image: "/media/t.jpeg",
             popular: true
         },
@@ -137,7 +137,7 @@ const menuData = {
         {
             name: "Hazelnut Latte",
             description: "Smooth espresso blended with creamy milk and rich hazelnut syrup warm, nutty, and beautifully aromatic.",
-            price: "350",
+            price: '<span class="price-group"><span class="price-label">Hot</span><span class="price-value">350</span></span><span class="price-divider">/</span><span class="price-group"><span class="price-label">Cold</span><span class="price-value">360</span></span>',
             image: "/media/hazel.png",
             popular: true
         },
@@ -151,7 +151,7 @@ const menuData = {
         {
             name: "Affogato",
             description: "A scoop of creamy vanilla ice cream drowned in a hot shot of espresso — simple, indulgent, and perfectly bittersweet.",
-            price: "300",
+            price: "320",
             image: "/media/affogato.png",
             popular: false
         },
@@ -172,7 +172,7 @@ const menuData = {
         {
             name: "Avo Shot Iced Latte",
             description: "Chilled espresso blended with creamy avocado and milk — smooth, refreshing, and uniquely energizing.",
-            price: "360",
+            price: "380",
             image: "/media/avo.png",
             popular: false
         }
